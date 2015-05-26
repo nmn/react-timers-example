@@ -1,4 +1,4 @@
 var React = require('react')
-var Hello = require('./Hello')
+var Stopwatch = require('./Stopwatch')
 
-React.render(<Hello />, document.getElementById('app'))
+React.render(<Stopwatch seconds={10} />, document.getElementById('app'))

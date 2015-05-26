@@ -12,7 +12,6 @@
     "indent": [2, 2],
     "semi": [2, "never"],
     "camelcase": 0,
-    "comma-style": [2, "first"],
     "new-cap": 0,
     "strict": 0,
     "no-unused-expressions": 0,
