@@ -31,12 +31,15 @@ class Stopwatch extends React.Component {
   }
   resetClock(){
     this.setState({elapsedTime: 0, clockRunning: false})
+    if(this.props.onReset){
+      this.props.onReset()
+    }
   }
   render(){
     return (
       <div className="stop-watch">
         <span className="time-display">
-          {this.props.seconds + this.state.elapsedTime}
+          {this.props.formatTime(this.props.seconds, this.state.elapsedTime)}
         </span>
         <br />
 
@@ -54,11 +57,14 @@ class Stopwatch extends React.Component {
 }
 
 Stopwatch.PropTypes = {
-  seconds: React.PropTypes.number.isRequired
+  seconds: React.PropTypes.number.isRequired,
+  formatTime: React.PropTypes.func.isRequired,
+  onReset: React.PropTypes.func
 }
 
 Stopwatch.defaultProps = {
-  seconds: 0
+  seconds: 0,
+  formatTime: (initial, elapsed) => initial + elapsed + ' seconds'
 }
 
 module.exports = Stopwatch
