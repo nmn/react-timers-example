@@ -1,0 +1,24 @@
+{
+  "name": "timers",
+  "version": "1.0.0",
+  "description": "Simpler stopwatch and timer",
+  "main": "src/app.js",
+  "scripts": {
+    "build": "browserify -t babelify src/app.js -o build/index.js",
+    "watch": "watchify -t babelify src/app.js -o build/index.js"
+  },
+  "keywords": [
+    "react",
+    "book"
+  ],
+  "author": "Naman Goel",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.1",
+    "watchify": "^3.2.1"
+  }
+}
