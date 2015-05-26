@@ -1,2 +1,3 @@
-# react-simple-starter
-The most basic starter project for React development
+# react-starter
+
+A very simple starter kit for React, based on browserify, babel and reactliveload.

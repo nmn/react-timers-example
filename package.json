@@ -5,7 +5,10 @@
   "main": "src/app.js",
   "scripts": {
     "build": "browserify -t babelify src/app.js -o build/index.js",
-    "watch": "watchify -t babelify src/app.js -o build/index.js"
+    "watch": "npm run server & npm run bundle & npm run livereload & wait",
+    "server": "serve",
+    "bundle": "watchify src/app.js -v -t babelify -g livereactload -o build/index.js",
+    "livereload": "livereactload monitor -n build/index.js"
   },
   "keywords": [
     "react",
@@ -19,6 +22,9 @@
   "devDependencies": {
     "babelify": "^6.1.2",
     "browserify": "^10.2.1",
+    "jest": "^0.1.40",
+    "livereactload": "^0.5.2",
+    "serve": "^1.4.0",
     "watchify": "^3.2.1"
   }
 }
